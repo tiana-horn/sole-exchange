@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+
+{% block title %}
+    Sole Exchange {{ block.super }}
+{% endblock title %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="{% static 'js/bootstrap.js' %}" defer></script>
+
+
+{% block header %}
+
+{% endblock header %}             
+                    
+
+{% block content %}
+
+<header class="georgia">
+
+      <div class="tc-1 mt4 mt5-m mt6-1 ph1">
+        <div class="flex items-center justify-center pa0">
+        <h1 class="f2  fw2 black mb2 mt2">Sole Exchange</h1>
+
+
+        </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://sneakers-magazine.com/wp-content/uploads/2017/07/11.-air-jordan-11.jpg" alt="Jordan collection" height=700>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://sneakernews.com/wp-content/uploads/2016/11/yeezy-350v2-store-list.jpg" alt="Yeezy collection" height=700>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://sneakernews.com/wp-content/uploads/2013/02/nike-air-max-home-turf-collection.jpg" alt="Air max collection" height=700>
+    </div>
+    </div>
+    </div>
+        <div class="tc-1 mt4 mt5-m mt6-1 ph1">
+        <div class="flex items-center justify-center pa0">
+        <a class="f2 link dim ph2 tc pv2 mt4 mb0 dib white bg-black" href="{% url 'home' %}">Sign Up</a>
+
+        </div>
+  
+        </div>
+        </div>
+        </div>
+
+        </nav>
+   </div> 
+</div>
+</header>
+<article class="cf ph3 ph5-ns pv5 vh-100 dt w-100">
+<div class="tc-1">
+    {% for shoe in shoes %}
+    <div class=" fl w-30 dib ma justify-between items-center center">
+    
+    <a class= "ma2" href={% url 'shoe_detail' slug=shoe.slug %}><img src="{{ shoe.picture.url }}"></a>
+    <h2 class= "ma2">{{ shoe.name }}</h2>
+    <h5 class= "ma2">{{ shoe.description}}</h5>
+    </div>
+    
+
+    {% endfor %}
+
+{% endblock content %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+ {% block footer %}
+ {% endblock footer %}
