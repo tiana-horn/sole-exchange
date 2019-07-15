@@ -9,6 +9,10 @@ verify_ssl = true
 django = "*"
 python-dotenv = "*"
 pillow = "*"
+django-registration-redux = "*"
+django-extensions = "*"
+python3 = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
